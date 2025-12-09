@@ -10,8 +10,8 @@ ordered_distances = sorted(
     for i, j in combinations(range(len(points)), 2)
 )
 
-circuits = [{i} for i in range(len(points))]
-find = lambda p: next(c for c in circuits if p in c)
+circuits = [{i} for i in range(len(points))]  # each box starts on its own circuit
+find = lambda p: next(c for c in circuits if p in c)  # find circuit containing point p
 
 for n, (_, i, j) in enumerate(ordered_distances, 1):
     circuit_i, circuit_j = find(i), find(j)
